@@ -1,65 +1,597 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { Button, Grid, List, ListItem, ListItemText, makeStyles, Paper, Typography } from '@material-ui/core';
+import { 
+    CasinoOutlined, 
+    CreateNewFolderOutlined, 
+    DescriptionOutlined, 
+    FindInPageOutlined, 
+    GavelOutlined, 
+    ListOutlined, 
+    PersonOutlineOutlined } from '@material-ui/icons';
+import Header from '../src/layouts/Header'
+import Footer from '../src/layouts/Footer'
 
+const useStyles = makeStyles((theme) => ({
+    title1: {
+        fontWeight: 'bold',
+        fontSize: 30,
+        marginBottom: 34
+    },
+    title2: {
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        marginBottom: 36
+    },
+    welcome: {
+        backgroundColor: '#768eaf',
+        color: 'white',
+        padding: '150px 60px 360px',
+        marginTop: 112,
+        '& h4': {
+            marginBottom: 10
+        }
+    },
+    containerImage: {
+        display: 'flex',
+    },
+    benefits: {
+      backgroundColor: '#eeeeee',
+      padding: '0 60px'
+    },
+    paperBenefits: {
+        padding: '128px 108px 0'
+    },
+    video: {
+        marginTop: 26
+    },
+    subtitle1: {
+        fontSize: 18,
+        textAlign: 'center',
+        marginBottom: 100
+    },
+    title: {
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        fontSize: 26,
+    },
+    presentation: {
+        color: 'white',
+        padding: '100px 0 70px',
+        backgroundColor: '#305395',
+    },
+    regions: {
+        padding: '60px 0 50px',
+        '& h4': {
+            marginBottom: 50
+        }
+    },
+    listRegions: {
+        textTransform: 'uppercase',
+        marginTop: 50
+    },
+    southeast: {
+        '& > span': {
+            backgroundColor: '#305395',
+        }
+    },
+    north: {
+        '& > span': {
+            backgroundColor: '#2c5499',
+        }
+    },
+    northEast: {
+        '& > span': {
+            backgroundColor: '#2e76b1',
+        }
+    },
+    south: {
+        '& > span': {
+            backgroundColor: '#8fa9da',
+        }
+    },
+    midwest: {
+        '& > span': {
+            backgroundColor: '#8397b0',
+        }
+    },
+    circle: {
+        height: 35,
+        width: 35,
+        backgroundColor: '#203864',
+        borderRadius: '50%',
+        marginRight: 20
+    },
+    numbers: {
+        backgroundColor: '#203864',
+        padding: '60px 0 50px',
+        color: 'white',
+        '& h4': {
+            marginBottom: 50
+        }
+    },
+    number: {
+        fontWeight: 'bold',
+        fontSize: 30
+    },
+    descriptionNumber: {
+        fontSize: 14,
+    },
+    solutions: {
+        backgroundColor: '#d0e3fd',
+        padding: '60px 0 50px',
+        '& h5': {
+            marginBottom: 50
+        }
+    },
+    solution: {
+        borderRadius: 15,
+        height: 320,
+        width: 300,
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        padding: '20px 30px 50px',
+        '& h6': {
+            textTransform: 'uppercase',
+            fontSize: 12,
+            color: '#203864',
+            textAlign: 'center',
+            marginBottom: 25,
+            minHeight: 36,
+            fontWeight: 'bold',
+        },
+        '& p': {
+            fontSize: 12
+        }
+    },
+    clients: {
+        backgroundColor: '#eaf1fa',
+        padding: '60px 0 50px',
+    },
+    client: {
+        height: 148,
+        width: 300,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 55,
+        borderRadius: 15
+    },
+    doubts: {
+        padding: '60px 0',
+        '& h5': {
+            marginBottom: 55
+        }
+    },
+  }));
 export default function Home() {
+  const classes = useStyles();
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div>
+        <Header />
+        <section className={classes.welcome}>
+            <Grid container spacing={3}>
+                <Grid item sm={7}>
+                    <Typography className={classes.title} variant="h4">
+                        Acreditamos na inovação <br />
+                        para escritórios de advocacia <br />
+                        e departamentos jurídicos corporativos
+                    </Typography>
+                    <Typography paragraph>
+                        Através de soluções para potencializar resultados por meio da LEGAL OPERATIONS, <br />
+                        com foco em Controladora jurídica e Logística processual e administrativa,
+                        utilizando tecnologias inovadoras e alicerçadas em pessoas.
+                    </Typography>
+                </Grid>
+            </Grid>
+        </section>
+        <section className={classes.benefits}>
+            <Paper className={classes.paperBenefits}>
+                <Grid spacing={10} container>
+                    <Grid item 
+                        sm={7}
+                        direction="column"
+                        justify="center"
+                        container
+                    >
+                        <Typography className={classes.title2} variant="h5">
+                            Buscamos proximidade para <br />
+                            promover soluções únicas
+                        </Typography>
+                        <Typography paragraph>
+                            Nossas soluções colocam o cliente no centro do negócio, com alta
+                            possibilidade de personalização e atendimento especializado para
+                            atua nas mais diversas necessidades do processo.
+                        </Typography>
+                    </Grid>
+                    <Grid item sm={5}>
+                        <Typography className={classes.containerImage} align="right"> 
+                            <img src="notebook.png" />
+                        </Typography>
+                    </Grid>
+                    
+                    <Grid item sm={5}>
+                        <Typography className={classes.containerImage} align="right"> 
+                            <img src="notebook.png" />
+                        </Typography>
+                    </Grid>
+                    <Grid item 
+                        sm={7}
+                        direction="column"
+                        justify="center"
+                        container
+                    >
+                        <Typography className={classes.title2} variant="h5">
+                            Buscamos proximidade para <br />
+                            promover soluções únicas
+                        </Typography>
+                        <Typography paragraph>
+                            Nossas soluções colocam o cliente no centro do negócio, com alta
+                            possibilidade de personalização e atendimento especializado para
+                            atua nas mais diversas necessidades do processo.
+                        </Typography>
+                    </Grid>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+                    <Grid item 
+                        sm={7}
+                        direction="column"
+                        justify="center"
+                        container
+                    >
+                        <Typography className={classes.title2} variant="h5">
+                            Buscamos proximidade para <br />
+                            promover soluções únicas
+                        </Typography>
+                        <Typography paragraph>
+                            Nossas soluções colocam o cliente no centro do negócio, com alta
+                            possibilidade de personalização e atendimento especializado para
+                            atua nas mais diversas necessidades do processo.
+                        </Typography>
+                    </Grid>
+                    <Grid item sm={5}>
+                        <Typography className={classes.containerImage} align="right"> 
+                            <img src="notebook.png" />
+                        </Typography>
+                    </Grid>
+                    
+                    <Grid item sm={5}>
+                        <Typography className={classes.containerImage} align="right"> 
+                            <img src="notebook.png" />
+                        </Typography>
+                    </Grid>
+                    <Grid item 
+                        sm={7}
+                        direction="column"
+                        justify="center"
+                        container
+                    >
+                        <Typography className={classes.title2} variant="h5">
+                            Buscamos proximidade para <br />
+                            promover soluções únicas
+                        </Typography>
+                        <Typography paragraph>
+                            Nossas soluções colocam o cliente no centro do negócio, com alta
+                            possibilidade de personalização e atendimento especializado para
+                            atua nas mais diversas necessidades do processo.
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Paper>
+        </section>
+        <section className={classes.presentation}>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item sm={10}>
+                    <Typography className={classes.title1} variant="h5">
+                        Controladoria jurídica e Logística processual e administrativa, <br />
+                        utilizando tecnologias inovadoras e alicerçadas em pessoas.
+                    </Typography>
+                </Grid>
+                <Grid item sm={10}>
+                    <Typography className={classes.subtitle1} variant="subtitle1">
+                        O jurify oferece um modelo de negócios para escritórios de advocacia e departamentos 
+                        jurídicos corporativos, <br />
+                        possuindo um caledárion de inovação constante, com lançamentos 
+                        de novos produtos para otimizar a rotina jurídica <br />
+                        dos clientes e aumentar a eficiência 
+                        em atividades específicas.
+                    </Typography>
+                </Grid>
+                <Grid item sm={10}>
+                    <Typography variant="h5">
+                        <b>Assista</b> este vídeo para entender em detalhes <br />
+                        a <b>revolução</b> que a <b>Jurify</b> trará para <b>sua empresa</b>.
+                    </Typography>
+                </Grid>
+                <Grid item sm={10}>
+                    <iframe
+                        className={classes.video}
+                        width="955"
+                        height="530"
+                        src="https://www.youtube.com/embed/HF6JVakz2LI?controls=0"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe> 
+                </Grid>
+            </Grid>
+        </section>
+        <section className={classes.numbers}>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <Typography className={classes.title} variant="h4">
+                        Nossos números
+                    </Typography>
+                </Grid>
+                <Grid 
+                    item 
+                    xs={10} 
+                    container
+                    justify="center"
+                    alignItems="center"
+                >
+                    <Grid item sm={2}>
+                        <Typography align="center">
+                            <CasinoOutlined style={{fontSize: 80}} />
+                        </Typography>
+                        <Typography className={classes.number} align="center">
+                            9
+                        </Typography>
+                        <Typography className={classes.descriptionNumber} align="center">
+                            novos produtos <br/>
+                            lançados
+                        </Typography>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <Typography align="center">
+                            <CasinoOutlined style={{fontSize: 80}} />
+                        </Typography>
+                        <Typography className={classes.number} align="center">
+                            3.400.000
+                        </Typography>
+                        <Typography className={classes.descriptionNumber} align="center">
+                            demandas  <br/>
+                            atendidas
+                        </Typography>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <Typography align="center">
+                            <CasinoOutlined style={{fontSize: 80}} />
+                        </Typography>
+                        <Typography className={classes.number} align="center">
+                            125.000
+                        </Typography>
+                        <Typography className={classes.descriptionNumber} align="center">
+                            diligências <br/>
+                            realizadas
+                        </Typography>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <Typography align="center">
+                            <CasinoOutlined style={{fontSize: 80}} />
+                        </Typography>
+                        <Typography className={classes.number} align="center">
+                            3.600
+                        </Typography>
+                        <Typography className={classes.descriptionNumber} align="center">
+                            novos advogados <br/>
+                            treinados
+                        </Typography>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <Typography align="center">
+                            <CasinoOutlined style={{fontSize: 80}} />
+                        </Typography>
+                        <Typography className={classes.number} align="center">
+                            50.000
+                        </Typography>
+                        <Typography className={classes.descriptionNumber} align="center">
+                            audiências <br/>
+                            feitas
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </section>
+        <section className={classes.regions}>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <Typography className={classes.title} variant="h4">
+                        Regiões atendidas
+                    </Typography>
+                </Grid>
+                <Grid item direction="row" justify="center" xs={8} container>
+                    <Grid item sm={6}>
+                        <List className={classes.listRegions}>
+                            <ListItem className={classes.southeast}>
+                                <span className={classes.circle}></span>
+                                <ListItemText primary="Sudeste" />
+                            </ListItem>
+                            <ListItem className={classes.southeast}>
+                                <span className={classes.circle}></span>
+                                <ListItemText primary="Norte" />
+                            </ListItem>
+                            <ListItem className={classes.northEast}>
+                                <span className={classes.circle}></span>
+                                <ListItemText primary="Nordeste" />
+                            </ListItem>
+                            <ListItem className={classes.south}>
+                                <span className={classes.circle}></span>
+                                <ListItemText primary="Sul" />
+                            </ListItem>
+                            <ListItem className={classes.midwest}>
+                                <span className={classes.circle}></span>
+                                <ListItemText primary="Centro-Oeste" />
+                            </ListItem>
+                        </List>
+                    </Grid>
+                    <Grid item sm={6}>
+                        <img src="map.png" />
+                    </Grid>
+                </Grid>
+                
+            </Grid>
+        </section>
+        <section className={classes.solutions}>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <Typography className={classes.title} variant="h4">
+                        Nossas soluções
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography variant="h5">
+                        em controladoria jurídica e logística processual forense e administrativa
+                    </Typography>
+                </Grid>
+                <Grid 
+                    item 
+                    xs={10} 
+                    spacing={5} 
+                    container
+                >
+                    <Grid item sm={4}>
+                        <Paper className={classes.solution} elevation={3}>
+                            <CreateNewFolderOutlined style={{color:"#203864", fontSize: 100}} />
+                            <Typography variant="subtitle2">
+                                Cadastramento de <br />
+                                novos processos
+                            </Typography>
+                            <Typography  paragraph>
+                                Inserção de dados de novos processos e seus incidentais nos respectivos
+                                sistemas do cliente, atendendo às peculiaridades processuais e sistêmicas.
+                            </Typography>
+                        </Paper>
+                    </Grid>
+                    <Grid item sm={4}>
+                        <Paper className={classes.solution} elevation={3}>
+                            <PersonOutlineOutlined style={{color:"#203864", fontSize: 100}} />
+                            <Typography variant="subtitle2">
+                                Habilitação <br />
+                                de patronos
+                            </Typography>
+                            <Typography  paragraph>
+                                Inserção de dados de novos processos e seus incidentais nos respectivos
+                                sistemas do cliente, atendendo às peculiaridades processuais e sistêmicas.
+                            </Typography>
+                        </Paper>
+                    </Grid>
+                    <Grid item sm={4}>
+                        <Paper className={classes.solution} elevation={3}>
+                            <DescriptionOutlined style={{color:"#203864", fontSize: 100}} />
+                            <Typography variant="subtitle2">
+                                Realização de <br />
+                                diligências
+                            </Typography>
+                            <Typography  paragraph>
+                                Inserção de dados de novos processos e seus incidentais nos respectivos
+                                sistemas do cliente, atendendo às peculiaridades processuais e sistêmicas.
+                            </Typography>
+                        </Paper>
+                    </Grid>
+                    <Grid item sm={4}>
+                        <Paper className={classes.solution} elevation={3}>
+                            <GavelOutlined style={{color:"#203864", fontSize: 100}} />
+                            <Typography variant="subtitle2">
+                                Realização de audiências presenciais e telepresenciais
+                            </Typography>
+                            <Typography  paragraph>
+                                Inserção de dados de novos processos e seus incidentais nos respectivos
+                                sistemas do cliente, atendendo às peculiaridades processuais e sistêmicas.
+                            </Typography>
+                        </Paper>
+                    </Grid>
+                    <Grid item sm={4}>
+                        <Paper className={classes.solution} elevation={3}>
+                            <FindInPageOutlined style={{color:"#203864", fontSize: 100}} />
+                            <Typography variant="subtitle2">
+                                Leitura, interpretação e <br />
+                                lançamento de citações e intimações
+                            </Typography>
+                            <Typography  paragraph>
+                                Inserção de dados de novos processos e seus incidentais nos respectivos
+                                sistemas do cliente, atendendo às peculiaridades processuais e sistêmicas.
+                            </Typography>
+                        </Paper>
+                    </Grid>
+                    <Grid item sm={4}>
+                        <Paper className={classes.solution} elevation={3}>
+                            <ListOutlined style={{color:"#203864", fontSize: 100}} />
+                            <Typography variant="subtitle2">
+                                Protocolos físicos & eletrônicos
+                            </Typography>
+                            <Typography  paragraph>
+                                Inserção de dados de novos processos e seus incidentais nos respectivos
+                                sistemas do cliente, atendendo às peculiaridades processuais e sistêmicas.
+                            </Typography>
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </section>
+        <section className={classes.clients}>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <Typography className={classes.title} variant="h4">
+                        Confira alguns clientes satisfeitos
+                    </Typography>
+                </Grid>
+                <Grid item>
+                <Paper className={classes.client}>
+                    <img src="ferreira-chagas.png" />
+                </Paper>
+                </Grid>
+            </Grid>
+        </section>
+        <section className={classes.doubts}>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <Typography className={classes.title} variant="h4">
+                        Ficou com alguma dúvida?
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography variant="h5">
+                        Converse com um especialista do nosso time.
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Button variant="contained" color="primary">
+                        Quero conversar com um especialista
+                    </Button>
+                </Grid>
+            </Grid>
+        </section>
+        <Footer />
     </div>
-  )
+  );
 }
