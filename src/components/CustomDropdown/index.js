@@ -9,34 +9,10 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { ListItem, ListItemText } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  paper: {
-    marginRight: theme.spacing(2),
-  },
-  button: {
-    fontSize: 12,
-    fontWeight: 'normal',
-    whiteSpace: 'nowrap',
-    textTransform: 'none',
-    minWidth: 'auto',
-    padding: '8px 16px'
-  },
-  listItem: {
-  },
-  listItemText: {
-    whiteSpace: 'nowrap',
-    '& span': {
-        fontSize: 16
-    }
-  },
-}));
+import styles from './styles'
 
 export default function CustomDropdown({primary, dropdownList}) {
-  const classes = useStyles();
+  const classes = styles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
@@ -81,9 +57,6 @@ export default function CustomDropdown({primary, dropdownList}) {
             <ListItemText className={classes.listItemText} primary={primary} />
             <ExpandMore /> 
         </ListItem>
-        
-        
-
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
